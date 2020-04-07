@@ -71,24 +71,20 @@ public class Trabalhador {
 		this.contratos.remove(contratos);
 	}
 	
-	public double entrada (Integer ano, Integer mes) {
+	public double entrada (int ano, int mes) {
 		double soma = salarioBase;
 		Calendar cal = Calendar.getInstance();
 		for (HoraContrato c : contratos) {
 			cal.setTime(c.getData());
 			int c_ano = cal.get(Calendar.YEAR);
-			int c_mes = 1+cal.get(Calendar.MONTH);		
+			int c_mes = 1 + cal.get(Calendar.MONTH);		
 			if (ano == c_ano && mes == c_mes) {				
 				soma += c.valorTotal();
 			}			
 		}
 		return soma;
 		
-	}
-
-
-	
-	
+	}	
 	
 
 }
